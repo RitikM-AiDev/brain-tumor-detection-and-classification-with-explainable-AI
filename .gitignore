@@ -1,0 +1,11 @@
+.env
+dataset/
+Training/
+Testing/
+*.h5
+*.keras
+*.jpg
+*.jpeg
+*.png
+__pycache__/
+app_uploads/
