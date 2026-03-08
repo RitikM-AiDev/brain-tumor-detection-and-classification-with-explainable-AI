@@ -3,3 +3,12 @@ uvicorn[standard]
 python-multipart
 markdown2
 pdfkit
+langchain
+langchain-openai
+openai
+langgraph
+langchain-core
+opencv-python
+numpy
+tensorflow
+reportlab
