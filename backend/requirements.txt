@@ -4,7 +4,7 @@ openai
 langgraph
 langchain-core
 opencv-python
-dot-env
+python-dotenv
 numpy
 reportlab
 fastapi
