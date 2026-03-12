@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0a0f1e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#050810;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="brainGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#0080ff;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:#4400cc;stop-opacity:0.8" />
+    </radialGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#00e5ff;stop-opacity:0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="brainClip">
+      <ellipse cx="200" cy="165" rx="95" ry="80"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)" rx="20"/>
+
+  <!-- Outer glow ring -->
+  <circle cx="200" cy="175" r="130" fill="url(#glowGrad)"/>
+
+  <!-- Outer circle border -->
+  <circle cx="200" cy="175" r="115" fill="none" stroke="#00e5ff" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
+
+  <!-- Neural network lines in background -->
+  <g opacity="0.15" stroke="#00e5ff" stroke-width="0.8">
+    <line x1="120" y1="120" x2="200" y2="90"/>
+    <line x1="200" y1="90" x2="280" y2="120"/>
+    <line x1="120" y1="120" x2="150" y2="200"/>
+    <line x1="280" y1="120" x2="250" y2="200"/>
+    <line x1="150" y1="200" x2="200" y2="230"/>
+    <line x1="250" y1="200" x2="200" y2="230"/>
+    <line x1="150" y1="200" x2="110" y2="180"/>
+    <line x1="250" y1="200" x2="290" y2="180"/>
+    <circle cx="120" cy="120" r="3" fill="#00e5ff"/>
+    <circle cx="280" cy="120" r="3" fill="#00e5ff"/>
+    <circle cx="150" cy="200" r="3" fill="#00e5ff"/>
+    <circle cx="250" cy="200" r="3" fill="#00e5ff"/>
+    <circle cx="200" cy="230" r="3" fill="#00e5ff"/>
+    <circle cx="110" cy="180" r="3" fill="#00e5ff"/>
+    <circle cx="290" cy="180" r="3" fill="#00e5ff"/>
+    <circle cx="200" cy="90" r="3" fill="#00e5ff"/>
+  </g>
+
+  <!-- Brain shape - left hemisphere -->
+  <g filter="url(#softGlow)">
+    <!-- Main brain outline -->
+    <path d="
+      M 200 100
+      C 175 95, 145 98, 128 115
+      C 108 135, 105 158, 110 178
+      C 105 192, 108 210, 118 220
+      C 125 232, 138 238, 150 235
+      C 158 240, 168 242, 178 240
+      C 185 242, 192 244, 200 243
+      C 208 244, 215 242, 222 240
+      C 232 242, 242 240, 250 235
+      C 262 238, 275 232, 282 220
+      C 292 210, 295 192, 290 178
+      C 295 158, 292 135, 272 115
+      C 255 98, 225 95, 200 100
+      Z
+    " fill="url(#brainGrad)" opacity="0.9"/>
+
+    <!-- Brain fold lines - left -->
+    <path d="M 145 130 C 138 145, 135 162, 140 178" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+    <path d="M 155 118 C 148 132, 145 150, 148 168" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+    <path d="M 130 165 C 138 170, 148 172, 155 168" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M 125 188 C 133 192, 143 193, 152 190" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M 140 208 C 150 212, 162 213, 170 208" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Brain fold lines - right -->
+    <path d="M 255 130 C 262 145, 265 162, 260 178" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+    <path d="M 245 118 C 252 132, 255 150, 252 168" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.6" stroke-linecap="round"/>
+    <path d="M 270 165 C 262 170, 252 172, 245 168" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M 275 188 C 267 192, 257 193, 248 190" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" stroke-linecap="round"/>
+    <path d="M 260 208 C 250 212, 238 213, 230 208" fill="none" stroke="#00e5ff" stroke-width="1.2" stroke-opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Center divide -->
+    <path d="M 200 103 C 198 130, 197 160, 198 210 C 199 225, 200 240, 200 243" fill="none" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.4" stroke-linecap="round"/>
+
+    <!-- Highlight -->
+    <ellipse cx="175" cy="125" rx="20" ry="12" fill="white" opacity="0.08" transform="rotate(-20, 175, 125)"/>
+  </g>
+
+  <!-- Scan line effect -->
+  <line x1="108" y1="175" x2="292" y2="175" stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="3 5"/>
+
+  <!-- AI circuit dots on brain -->
+  <g filter="url(#glow)" opacity="0.9">
+    <circle cx="165" cy="148" r="4" fill="#00e5ff"/>
+    <circle cx="200" cy="138" r="4" fill="#00ffaa"/>
+    <circle cx="235" cy="148" r="4" fill="#00e5ff"/>
+    <circle cx="155" cy="185" r="3" fill="#00e5ff" opacity="0.7"/>
+    <circle cx="245" cy="185" r="3" fill="#00e5ff" opacity="0.7"/>
+    <circle cx="200" cy="195" r="3" fill="#ff4488" opacity="0.9"/>
+    <!-- Connection lines between dots -->
+    <line x1="165" y1="148" x2="200" y2="138" stroke="#00e5ff" stroke-width="0.8" opacity="0.5"/>
+    <line x1="200" y1="138" x2="235" y2="148" stroke="#00e5ff" stroke-width="0.8" opacity="0.5"/>
+    <line x1="165" y1="148" x2="155" y2="185" stroke="#00e5ff" stroke-width="0.8" opacity="0.4"/>
+    <line x1="235" y1="148" x2="245" y2="185" stroke="#00e5ff" stroke-width="0.8" opacity="0.4"/>
+    <line x1="155" y1="185" x2="200" y2="195" stroke="#00e5ff" stroke-width="0.8" opacity="0.4"/>
+    <line x1="245" y1="185" x2="200" y2="195" stroke="#00e5ff" stroke-width="0.8" opacity="0.4"/>
+  </g>
+
+  <!-- Detected tumor highlight (red dot with pulse ring) -->
+  <circle cx="200" cy="195" r="12" fill="none" stroke="#ff4488" stroke-width="1" stroke-opacity="0.4"/>
+  <circle cx="200" cy="195" r="18" fill="none" stroke="#ff4488" stroke-width="0.6" stroke-opacity="0.2"/>
+
+  <!-- Text -->
+  <text x="200" y="292" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="4" filter="url(#glow)">BRAIN TUMOR</text>
+  <text x="200" y="318" font-family="Georgia, serif" font-size="14" fill="#00e5ff" text-anchor="middle" letter-spacing="8" opacity="0.9">DETECTOR  AI</text>
+
+  <!-- Bottom accent line -->
+  <line x1="120" y1="330" x2="280" y2="330" stroke="#00e5ff" stroke-width="0.8" stroke-opacity="0.4"/>
+  <circle cx="120" cy="330" r="2" fill="#00e5ff" opacity="0.6"/>
+  <circle cx="280" cy="330" r="2" fill="#00e5ff" opacity="0.6"/>
+  <circle cx="200" cy="330" r="2" fill="#00ffaa" opacity="0.8"/>
+
+  <!-- Corner accents -->
+  <path d="M 30 30 L 30 55 M 30 30 L 55 30" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.4" fill="none"/>
+  <path d="M 370 30 L 370 55 M 370 30 L 345 30" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.4" fill="none"/>
+  <path d="M 30 370 L 30 345 M 30 370 L 55 370" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.4" fill="none"/>
+  <path d="M 370 370 L 370 345 M 370 370 L 345 370" stroke="#00e5ff" stroke-width="1.5" stroke-opacity="0.4" fill="none"/>
+</svg>
