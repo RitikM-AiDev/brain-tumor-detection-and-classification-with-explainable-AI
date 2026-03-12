@@ -7,7 +7,6 @@ import gdown
 import textwrap
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-
 from ai_dl.check import Check_Tumor
 from ai_dl.ai_agent import Agentic_ai
 
