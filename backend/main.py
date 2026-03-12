@@ -143,7 +143,7 @@ async def predict(file: UploadFile = File(...)):
         )
 
     except Exception as e:
-
+        print(e)
         return JSONResponse(
             status_code=500,
             content={"message": "Prediction failed"}
